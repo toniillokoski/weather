@@ -1,0 +1,21 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: rgb(241, 217, 185);
+
+    section {
+        text-align: center;
+
+        header {
+            
+            h1 {
+                font-size: 30px;
+                padding-top: 2em;
+            }
+        }
+    }
+}
