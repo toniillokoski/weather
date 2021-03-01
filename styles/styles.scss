@@ -38,20 +38,19 @@ body {
 
         .weather-container {
             img {
-                
+                border: none;
             }
             p {
-
+                border: none;
             }
             #temp {
                 font-size: 25px;
                 font-weight: bold;
                 letter-spacing: 0.06em;
-                padding-bottom: 0.5em;
+                margin-bottom: 0.5em;
             }
             #feels {
-                padding-bottom: 1em;
-                letter-spacing: 0.03em;
+                margin-bottom: 2em;
             }
             #sunrise {
                 padding-bottom: 0.5em;
