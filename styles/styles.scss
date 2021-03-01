@@ -4,6 +4,9 @@
     box-sizing: border-box;
 }
 
+// PUT COLOR VARIABLES HERE!!
+
+
 body {
     background: rgb(241, 217, 185);
     text-align: center;
@@ -14,25 +17,52 @@ body {
     section {
         position: relative;
         height: 100%;
-        width: 60%;
+        width: 100%;
         background: rgb(214, 192, 164);
-
+        max-width: 500px;
 
         .input-container {
-            padding: 1em 0em 1em 0em;
-            background: rgb(172, 154, 131);
+            padding: 1rem 0rem 1rem 0rem;
+            display: flex;
+            flex-direction: column;
+            padding: 1rem;
+
+            h1 {
+                font-size: 2rem;
+                margin-bottom: 2rem;
+                color: white;
+            }
             input {
-                padding: 1em;
+                border: none;
+                background: none;
+                outline: none;
+                border-bottom: 2px solid white;
+                font-size: 1rem;
+                margin-bottom: 0.5em;
+                &::placeholder {
+                    color: rgba(255, 255, 255, 0.473);
+                }
             }
             button {
-                padding: 1em;
+                cursor: pointer;
+                font-size: 0.75rem;
+                letter-spacing: 0.1em;
+                padding: 0.5rem;
+                border-radius: 5px;
+                background: red;
+                color: white;
+                transition: background 0.3s ease-in-out;
+                &:hover {
+                    background: rgba(255, 0, 0, 0.546);
+                }
             }
         }
         header {
             h1 {
-                font-size: 30px;
+                font-size: 1.5em;
                 padding: 1em 0em 1em 0em;
                 letter-spacing: 0.06em;
+                text-transform: uppercase;
             }
         }
 

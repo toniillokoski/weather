@@ -20,27 +20,75 @@ body {
 body section {
   position: relative;
   height: 100%;
-  width: 60%;
+  width: 100%;
   background: #d6c0a4;
+  max-width: 500px;
 }
 
 body section .input-container {
-  padding: 1em 0em 1em 0em;
-  background: #ac9a83;
+  padding: 1rem 0rem 1rem 0rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 1rem;
+}
+
+body section .input-container h1 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: white;
 }
 
 body section .input-container input {
-  padding: 1em;
+  border: none;
+  background: none;
+  outline: none;
+  border-bottom: 2px solid white;
+  font-size: 1rem;
+  margin-bottom: 0.5em;
+}
+
+body section .input-container input::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.473);
+}
+
+body section .input-container input:-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.473);
+}
+
+body section .input-container input::-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.473);
+}
+
+body section .input-container input::placeholder {
+  color: rgba(255, 255, 255, 0.473);
 }
 
 body section .input-container button {
-  padding: 1em;
+  cursor: pointer;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  padding: 0.5rem;
+  border-radius: 5px;
+  background: red;
+  color: white;
+  -webkit-transition: background 0.3s ease-in-out;
+  transition: background 0.3s ease-in-out;
+}
+
+body section .input-container button:hover {
+  background: rgba(255, 0, 0, 0.546);
 }
 
 body section header h1 {
-  font-size: 30px;
+  font-size: 1.5em;
   padding: 1em 0em 1em 0em;
   letter-spacing: 0.06em;
+  text-transform: uppercase;
 }
 
 body section .weather-container img {

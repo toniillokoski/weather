@@ -29,8 +29,8 @@ function(data){
     document.getElementById("temp").innerHTML = `${temp}°C`;
     document.getElementById("feels").innerHTML = "Feels like " + feels + "°C";
 
-    document.getElementById("sunrise").innerHTML = "Sun rises " + sunRise3;
-    document.getElementById("sunset").innerHTML = "Sun sets " + sunSet3;
+    document.getElementById("sunrise").innerHTML = "Sunrise " + sunRise3;
+    document.getElementById("sunset").innerHTML = "Sunset " + sunSet3;
     
 });
 
@@ -79,8 +79,8 @@ function changeCity(x) {
         document.getElementById("temp").innerHTML = `${temp}°C`;
         document.getElementById("feels").innerHTML = "Feels like " + feels + "°C";
 
-        document.getElementById("sunrise").innerHTML = "Sun rises " + sunRise3;
-        document.getElementById("sunset").innerHTML = "Sun sets " + sunSet3;
+        document.getElementById("sunrise").innerHTML = "Sunrise " + sunRise3;
+        document.getElementById("sunset").innerHTML = "Sunset " + sunSet3;
         
     });
 }
