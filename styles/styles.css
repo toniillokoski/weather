@@ -17,4 +17,8 @@ body section header h1 {
   font-size: 30px;
   padding-top: 2em;
 }
+
+#addbutton {
+  padding: 1em;
+}
 /*# sourceMappingURL=styles.css.map */

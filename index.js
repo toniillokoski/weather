@@ -1,7 +1,9 @@
-let key = JSON.stringify(config.apiKey);
+function changeCity(x) {
+    let city = document.getElementById("addinput").value;
+    let key = JSON.stringify(config.apiKey);
 
-$.getJSON(
-    `http://api.openweathermap.org/data/2.5/weather?q=Tampere&units=metric&appid=${key.replace(/\"/g, "")}`
+    $.getJSON(
+    `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${key.replace(/\"/g, "")}`
     , 
     function(data){
         //Weather icon
@@ -14,23 +16,20 @@ $.getJSON(
         let sunRise = new Date(data.sys.sunrise);
         //Sunset
         let sunSet = data.sys.sunset;
-  
+
         let sunRise2 = new Date(sunRise * 1000);
         let sunRise3 = sunRise2.toLocaleTimeString();
 
         let sunSet2 = new Date(sunSet * 1000);
         let sunSet3 = sunSet2.toLocaleTimeString();
 
-
-
+        document.getElementById("city").innerHTML = city;
         $("#icon").attr('src', icon);
-        document.getElementById("temp").innerHTML = temp + "°C <br>";
+        document.getElementById("temp").innerHTML = `${temp}°C`;
         document.getElementById("feels").innerHTML = "Feels like " + feels + "°C";
 
         document.getElementById("sunrise").innerHTML = "Sun rises " + sunRise3;
         document.getElementById("sunset").innerHTML = "Sun sets " + sunSet3;
         
-        
-
-});
-
+    });
+}

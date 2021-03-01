@@ -10,17 +10,20 @@
 </head>
 <body>
     <section>
+
+        <div class="input-container">
+            <input type="text" name="addcity" id="addinput">
+            <button id="addbutton" type="submit" onclick="changeCity()">Change</button>
+        </div>
+
         <header>
-            <h1>Tampere</h1>
+            <h1 id="city"></h1>
         </header>
 
         <div class="weather-container">
             <img id="icon">
             <p id="temp"></p>
             <p id="feels"></p>
-            <br>
-            <br>
-            <br>
             <p id="sunrise"></p>
             <p id="sunset"></p>
         </div>
