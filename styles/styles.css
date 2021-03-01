@@ -99,6 +99,10 @@ body section .weather-container p {
   border: none;
 }
 
+body section .weather-container #wtype {
+  text-transform: uppercase;
+}
+
 body section .weather-container #temp {
   font-size: 25px;
   font-weight: bold;

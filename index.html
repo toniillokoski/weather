@@ -11,11 +11,13 @@
 <body>
     <section>
 
-        <div class="input-container">
-            <h1>Weather App</h1>
-            <input type="text" name="addcity" id="addinput" placeholder="Search your city..">
-            <button id="addbutton" type="submit" onclick="changeCity()">Change</button>
-        </div>
+        <form>
+            <div class="input-container">
+                <h1>Weather App</h1>
+                <input type="text" name="addcity" id="addinput" placeholder="Search your city.." autofocus>
+                <button id="addbutton" type="submit" onclick="changeCity()">Change</button>
+            </div>
+        </form>
 
         <header>
             <h1 id="city"></h1>
@@ -23,6 +25,7 @@
 
         <div class="weather-container">
             <img id="icon">
+            <p id="wtype"></p>
             <p id="temp"></p>
             <p id="feels"></p>
             <p id="sunrise"></p>

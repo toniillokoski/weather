@@ -3,8 +3,11 @@ let key = JSON.stringify(config.apiKey);
 $.getJSON(
 `http://api.openweathermap.org/data/2.5/weather?q=Tampere&units=metric&appid=${key.replace(/\"/g, "")}` , 
 function(data){
+    console.log(data)
     //Weather icon
     let icon = "http://openweathermap.org/img/w/" + data.weather[0].icon + ".png";
+    //Weather type
+    let wtype = data.weather[0].description;
     //Temperature now
     let temp = data.main.temp;
     //Temperature feels like
@@ -26,6 +29,8 @@ function(data){
 
     document.getElementById("city").innerHTML = "Tampere";
     $("#icon").attr('src', icon);
+    document.getElementById("wtype").innerHTML = wtype;
+
     document.getElementById("temp").innerHTML = `${temp}°C`;
     document.getElementById("feels").innerHTML = "Feels like " + feels + "°C";
 
@@ -38,7 +43,7 @@ function(data){
 let input = document.getElementById("addinput");
 
 // Eventlistener when the user releases enter
-input.addEventListener("keyup", function(event) {
+input.addEventListener("press", function(event) {
     // Number 13 is the "Enter" key on the keyboard
     if (event.keyCode === 13) {
         event.preventDefault();
@@ -59,6 +64,8 @@ function changeCity(x) {
     function(data){
         //Weather icon
         let icon = "http://openweathermap.org/img/w/" + data.weather[0].icon + ".png";
+        //Weather type
+        let wtype = data.weather[0].description;
         //Temperature now
         let temp = data.main.temp;
         //Temperature feels like
@@ -75,7 +82,10 @@ function changeCity(x) {
         let sunSet3 = sunSet2.toLocaleTimeString();
 
         document.getElementById("city").innerHTML = city;
+
         $("#icon").attr('src', icon);
+        document.getElementById("wtype").innerHTML = wtype;
+
         document.getElementById("temp").innerHTML = `${temp}°C`;
         document.getElementById("feels").innerHTML = "Feels like " + feels + "°C";
 
@@ -83,4 +93,6 @@ function changeCity(x) {
         document.getElementById("sunset").innerHTML = "Sunset " + sunSet3;
         
     });
+
+    document.getElementById("addinput").value = "";
 }
