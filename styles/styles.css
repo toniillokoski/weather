@@ -7,18 +7,59 @@
 
 body {
   background: #f1d9b9;
+  text-align: center;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 body section {
-  text-align: center;
+  position: relative;
+  height: 100%;
+  width: 60%;
+  background: #d6c0a4;
+}
+
+body section .input-container {
+  padding: 1em 0em 1em 0em;
+  background: #ac9a83;
+}
+
+body section .input-container input {
+  padding: 1em;
+}
+
+body section .input-container button {
+  padding: 1em;
 }
 
 body section header h1 {
   font-size: 30px;
-  padding-top: 2em;
+  padding: 1em 0em 1em 0em;
+  letter-spacing: 0.06em;
 }
 
-#addbutton {
-  padding: 1em;
+body section .weather-container #temp {
+  font-size: 25px;
+  font-weight: bold;
+  letter-spacing: 0.06em;
+  padding-bottom: 0.5em;
+}
+
+body section .weather-container #feels {
+  padding-bottom: 1em;
+  letter-spacing: 0.03em;
+}
+
+body section .weather-container #sunrise {
+  padding-bottom: 0.5em;
+}
+
+body section .weather-container #sunset {
+  padding-bottom: 0.5em;
 }
 /*# sourceMappingURL=styles.css.map */

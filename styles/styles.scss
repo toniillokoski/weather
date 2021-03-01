@@ -6,20 +6,59 @@
 
 body {
     background: rgb(241, 217, 185);
+    text-align: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
 
     section {
-        text-align: center;
+        position: relative;
+        height: 100%;
+        width: 60%;
+        background: rgb(214, 192, 164);
 
+
+        .input-container {
+            padding: 1em 0em 1em 0em;
+            background: rgb(172, 154, 131);
+            input {
+                padding: 1em;
+            }
+            button {
+                padding: 1em;
+            }
+        }
         header {
-            
             h1 {
                 font-size: 30px;
-                padding-top: 2em;
+                padding: 1em 0em 1em 0em;
+                letter-spacing: 0.06em;
+            }
+        }
+
+        .weather-container {
+            img {
+                
+            }
+            p {
+
+            }
+            #temp {
+                font-size: 25px;
+                font-weight: bold;
+                letter-spacing: 0.06em;
+                padding-bottom: 0.5em;
+            }
+            #feels {
+                padding-bottom: 1em;
+                letter-spacing: 0.03em;
+            }
+            #sunrise {
+                padding-bottom: 0.5em;
+            }
+            #sunset {
+                padding-bottom: 0.5em;
             }
         }
     }
-}
-
-#addbutton {
-    padding: 1em;
 }
