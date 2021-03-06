@@ -1,20 +1,7 @@
 let key = JSON.stringify(config.apiKey);
 let geokey = JSON.stringify(config1.apiKey);
 
-  
-  function success(pos) {
-    const latitude = position.coords.latitude;
-    const longitude = position.coords.longitude;
-  }
-  
-  function error(err) {
-    console.warn(`ERROR(${err.code}): ${err.message}`);
-  }
-  
-  navigator.geolocation.getCurrentPosition(success(), error);
-
-
-/*
+/* TOIMIVA KOODIPÄTKÄ --- MITEN SAADA DATA ULOS???
 const successfulLocation = (position) => {
     const { latitude, longitude } = position.coords;
     fetch(`https://api.opencagedata.com/geocode/v1/json?q=${latitude}+${longitude}&key=${geokey.replace(/\"/g, "")}`)
@@ -26,13 +13,13 @@ const successfulLocation = (position) => {
 navigator.geolocation.getCurrentPosition(successfulLocation, console.log)
 */
 
-
+/* YRITYS SAADA DATA ULOS VASTAAVALLA KUN SÄÄTIEDOT
 $.getJSON(
     `https://api.opencagedata.com/geocode/v1/json?q=${latitude}+${longitude}&key=${geokey.replace(/\"/g, "")}` ,
     function(geoLoc){
         console.log(geoLoc);
     });
-
+*/
 
 
 
