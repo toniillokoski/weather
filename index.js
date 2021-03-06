@@ -1,9 +1,45 @@
 let key = JSON.stringify(config.apiKey);
+let geokey = JSON.stringify(config1.apiKey);
+
+  
+  function success(pos) {
+    const latitude = position.coords.latitude;
+    const longitude = position.coords.longitude;
+  }
+  
+  function error(err) {
+    console.warn(`ERROR(${err.code}): ${err.message}`);
+  }
+  
+  navigator.geolocation.getCurrentPosition(success(), error);
+
+
+/*
+const successfulLocation = (position) => {
+    const { latitude, longitude } = position.coords;
+    fetch(`https://api.opencagedata.com/geocode/v1/json?q=${latitude}+${longitude}&key=${geokey.replace(/\"/g, "")}`)
+
+    .then(response => response.json())
+    .then(console.log);
+};
+
+navigator.geolocation.getCurrentPosition(successfulLocation, console.log)
+*/
+
+
+$.getJSON(
+    `https://api.opencagedata.com/geocode/v1/json?q=${latitude}+${longitude}&key=${geokey.replace(/\"/g, "")}` ,
+    function(geoLoc){
+        console.log(geoLoc);
+    });
+
+
+
 
 $.getJSON(
 `http://api.openweathermap.org/data/2.5/weather?q=Tampere&units=metric&appid=${key.replace(/\"/g, "")}` , 
 function(data){
-    console.log(data)
+    console.log(data);
     //Weather icon
     let icon = "http://openweathermap.org/img/w/" + data.weather[0].icon + ".png";
     //Weather type
