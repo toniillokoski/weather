@@ -1,29 +1,23 @@
 let key = JSON.stringify(config.apiKey);
 let geokey = JSON.stringify(config1.apiKey);
 
-/* TOIMIVA KOODIPÄTKÄ --- MITEN SAADA DATA ULOS???
 const successfulLocation = (position) => {
     const { latitude, longitude } = position.coords;
-    fetch(`https://api.opencagedata.com/geocode/v1/json?q=${latitude}+${longitude}&key=${geokey.replace(/\"/g, "")}`)
-
-    .then(response => response.json())
-    .then(console.log);
+//    fetch(`https://api.opencagedata.com/geocode/v1/json?q=${latitude}+${longitude}&key=${geokey.replace(/\"/g, "")}`)
+//    .then(response => response.json())
+    $.getJSON(
+        `https://api.opencagedata.com/geocode/v1/json?q=${latitude}+${longitude}&key=${geokey.replace(/\"/g, "")}` ,
+        function(geoLoc){
+            let location1 = geoLoc.results[0].components.city;
+            console.log(location1);
+        });
 };
 
-navigator.geolocation.getCurrentPosition(successfulLocation, console.log)
-*/
-
-/* YRITYS SAADA DATA ULOS VASTAAVALLA KUN SÄÄTIEDOT
-$.getJSON(
-    `https://api.opencagedata.com/geocode/v1/json?q=${latitude}+${longitude}&key=${geokey.replace(/\"/g, "")}` ,
-    function(geoLoc){
-        console.log(geoLoc);
-    });
-*/
+navigator.geolocation.getCurrentPosition(successfulLocation)
 
 
 $.getJSON(
-`http://api.openweathermap.org/data/2.5/weather?q=Tampere&units=metric&appid=${key.replace(/\"/g, "")}` , 
+`http://api.openweathermap.org/data/2.5/weather?q=Oulu&units=metric&appid=${key.replace(/\"/g, "")}` , 
 function(data){
     //Weather icon
     let icon = "http://openweathermap.org/img/w/" + data.weather[0].icon + ".png";
@@ -50,7 +44,7 @@ function(data){
     //TODO : TRY TO DO FUNCTION HERE
     //TODO : TRY TO DO FUNCTION HERE
 
-    document.getElementById("city").innerHTML = "Tampere";
+    document.getElementById("city").innerHTML = location1;
     $("#icon").attr('src', icon);
     document.getElementById("wtype").innerHTML = wtype;
 
