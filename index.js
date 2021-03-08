@@ -3,58 +3,56 @@ let geokey = JSON.stringify(config1.apiKey);
 
 const successfulLocation = (position) => {
     const { latitude, longitude } = position.coords;
-//    fetch(`https://api.opencagedata.com/geocode/v1/json?q=${latitude}+${longitude}&key=${geokey.replace(/\"/g, "")}`)
-//    .then(response => response.json())
     $.getJSON(
         `https://api.opencagedata.com/geocode/v1/json?q=${latitude}+${longitude}&key=${geokey.replace(/\"/g, "")}` ,
         function(geoLoc){
             let location1 = geoLoc.results[0].components.city;
-            console.log(location1);
+
+            
+            $.getJSON(
+                `http://api.openweathermap.org/data/2.5/weather?q=Oulu&units=metric&appid=${key.replace(/\"/g, "")}` , 
+                function(data){
+                    //Weather icon
+                    let icon = "http://openweathermap.org/img/w/" + data.weather[0].icon + ".png";
+                    //Weather type
+                    let wtype = data.weather[0].description;
+                    //Temperature now
+                    let temp = data.main.temp;
+                    let temp2 = parseFloat(temp, 10);
+                    //Temperature feels like
+                    let feels = data.main.feels_like;
+                    let feels2 = parseFloat(feels, 10);
+                    //Sunrise
+                    let sunRise = new Date(data.sys.sunrise);
+                    //Sunset
+                    let sunSet = data.sys.sunset;
+                
+                    //TODO : TRY TO DO FUNCTION HERE
+                    //TODO : TRY TO DO FUNCTION HERE
+                    let sunRise2 = new Date(sunRise * 1000);
+                    let sunRise3 = sunRise2.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+                
+                    let sunSet2 = new Date(sunSet * 1000);
+                    let sunSet3 = sunSet2.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+                    //TODO : TRY TO DO FUNCTION HERE
+                    //TODO : TRY TO DO FUNCTION HERE
+                
+                    document.getElementById("city").innerHTML = location1;
+                    $("#icon").attr('src', icon);
+                    document.getElementById("wtype").innerHTML = wtype;
+                
+                    document.getElementById("temp").innerHTML = temp2.toFixed(0) + "°C";
+                    document.getElementById("feels").innerHTML = "Feels like " + feels2.toFixed(0) + "°C";
+                
+                    document.getElementById("sunrise").innerHTML = "Sunrise " + sunRise3;
+                    document.getElementById("sunset").innerHTML = "Sunset " + sunSet3;
+                    
+                });
+
         });
 };
 
 navigator.geolocation.getCurrentPosition(successfulLocation)
-
-
-$.getJSON(
-`http://api.openweathermap.org/data/2.5/weather?q=Oulu&units=metric&appid=${key.replace(/\"/g, "")}` , 
-function(data){
-    //Weather icon
-    let icon = "http://openweathermap.org/img/w/" + data.weather[0].icon + ".png";
-    //Weather type
-    let wtype = data.weather[0].description;
-    //Temperature now
-    let temp = data.main.temp;
-    let temp2 = parseFloat(temp, 10);
-    //Temperature feels like
-    let feels = data.main.feels_like;
-    let feels2 = parseFloat(feels, 10);
-    //Sunrise
-    let sunRise = new Date(data.sys.sunrise);
-    //Sunset
-    let sunSet = data.sys.sunset;
-
-    //TODO : TRY TO DO FUNCTION HERE
-    //TODO : TRY TO DO FUNCTION HERE
-    let sunRise2 = new Date(sunRise * 1000);
-    let sunRise3 = sunRise2.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-
-    let sunSet2 = new Date(sunSet * 1000);
-    let sunSet3 = sunSet2.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-    //TODO : TRY TO DO FUNCTION HERE
-    //TODO : TRY TO DO FUNCTION HERE
-
-    document.getElementById("city").innerHTML = location1;
-    $("#icon").attr('src', icon);
-    document.getElementById("wtype").innerHTML = wtype;
-
-    document.getElementById("temp").innerHTML = temp2.toFixed(0) + "°C";
-    document.getElementById("feels").innerHTML = "Feels like " + feels2.toFixed(0) + "°C";
-
-    document.getElementById("sunrise").innerHTML = "Sunrise " + sunRise3;
-    document.getElementById("sunset").innerHTML = "Sunset " + sunSet3;
-    
-});
 
     
 let input = document.getElementById("addinput");
