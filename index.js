@@ -13,7 +13,7 @@ const successfulLocation = (position) => {
                 `http://api.openweathermap.org/data/2.5/weather?q=Oulu&units=metric&appid=${key.replace(/\"/g, "")}` , 
                 function(data){
                     //Weather icon
-                    let icon = "http://openweathermap.org/img/w/" + data.weather[0].icon + ".png";
+                    let icon = data.weather[0].icon;
                     //Weather type
                     let wtype = data.weather[0].description;
                     //Temperature now
@@ -38,7 +38,8 @@ const successfulLocation = (position) => {
                     //TODO : TRY TO DO FUNCTION HERE
                 
                     document.getElementById("city").innerHTML = location1;
-                    $("#icon").attr('src', icon);
+                    document.getElementById("icon").src = `/images/${icon}.svg`;
+                    
                     document.getElementById("wtype").innerHTML = wtype;
                 
                     document.getElementById("temp").innerHTML = temp2.toFixed(0) + "°C";
@@ -78,7 +79,7 @@ function changeCity(x) {
     , 
     function(data){
         //Weather icon
-        let icon = "http://openweathermap.org/img/w/" + data.weather[0].icon + ".png";
+        let icon = data.weather[0].icon;
         //Weather type
         let wtype = data.weather[0].description;
         //Temperature now
@@ -100,7 +101,7 @@ function changeCity(x) {
 
         document.getElementById("city").innerHTML = city;
 
-        $("#icon").attr('src', icon);
+        document.getElementById("icon").src = `/images/${icon}.svg`;
         document.getElementById("wtype").innerHTML = wtype;
 
         document.getElementById("temp").innerHTML = temp2.toFixed(0) + "°C";
