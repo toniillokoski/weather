@@ -10,7 +10,7 @@ const successfulLocation = (position) => {
 
             
             $.getJSON(
-                `http://api.openweathermap.org/data/2.5/weather?q=Oulu&units=metric&appid=${key.replace(/\"/g, "")}` , 
+                `http://api.openweathermap.org/data/2.5/weather?q=${location1}&units=metric&appid=${key.replace(/\"/g, "")}` , 
                 function(data){
                     //Weather icon
                     let icon = data.weather[0].icon;
@@ -39,7 +39,7 @@ const successfulLocation = (position) => {
                 
                     document.getElementById("city").innerHTML = location1;
                     document.getElementById("icon").src = `/images/${icon}.svg`;
-                    
+
                     document.getElementById("wtype").innerHTML = wtype;
                 
                     document.getElementById("temp").innerHTML = temp2.toFixed(0) + "°C";

@@ -3,30 +3,34 @@
   margin: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  overflow: hidden;
 }
 
 body {
-  background: #f1d9b9;
+  background: -webkit-gradient(linear, left bottom, left top, from(#e6e6e6), to(#2274d1));
+  background: linear-gradient(360deg, #e6e6e6 0%, #2274d1 100%);
   text-align: center;
   height: 100vh;
+  max-height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 body section {
   position: relative;
   height: 100%;
   width: 100%;
-  background: #d6c0a4;
   max-width: 500px;
 }
 
 body section .input-container {
-  padding: 1rem 0rem 1rem 0rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -34,38 +38,36 @@ body section .input-container {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  padding: 1rem;
-}
-
-body section .input-container h1 {
-  font-size: 2rem;
-  margin-bottom: 2rem;
-  color: white;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 2em;
+  padding: 2em;
 }
 
 body section .input-container input {
   border: none;
   background: none;
   outline: none;
-  border-bottom: 2px solid white;
+  border-bottom: 2px solid #ff8819;
   font-size: 1rem;
   margin-bottom: 0.5em;
 }
 
 body section .input-container input::-webkit-input-placeholder {
-  color: rgba(255, 255, 255, 0.473);
+  color: rgba(51, 51, 51, 0.473);
 }
 
 body section .input-container input:-ms-input-placeholder {
-  color: rgba(255, 255, 255, 0.473);
+  color: rgba(51, 51, 51, 0.473);
 }
 
 body section .input-container input::-ms-input-placeholder {
-  color: rgba(255, 255, 255, 0.473);
+  color: rgba(51, 51, 51, 0.473);
 }
 
 body section .input-container input::placeholder {
-  color: rgba(255, 255, 255, 0.473);
+  color: rgba(51, 51, 51, 0.473);
 }
 
 body section .input-container button {
@@ -74,25 +76,32 @@ body section .input-container button {
   letter-spacing: 0.1em;
   padding: 0.5rem;
   border-radius: 5px;
-  background: red;
+  background: #ff8819;
   color: white;
+  width: 40%;
   -webkit-transition: background 0.3s ease-in-out;
   transition: background 0.3s ease-in-out;
 }
 
 body section .input-container button:hover {
-  background: rgba(255, 0, 0, 0.546);
+  background: #ff8819;
 }
 
-body section header h1 {
+body section .weather-container {
+  border: none;
+}
+
+body section .weather-container #icon {
+  border: none;
+  width: 150px;
+  height: 150px;
+}
+
+body section .weather-container header h2 {
   font-size: 1.5em;
   padding: 1em 0em 1em 0em;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-}
-
-body section .weather-container img {
-  border: none;
 }
 
 body section .weather-container p {
