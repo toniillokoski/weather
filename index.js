@@ -45,8 +45,13 @@ const successfulLocation = (position) => {
                     document.getElementById("temp").innerHTML = temp2.toFixed(0) + "°C";
                     document.getElementById("feels").innerHTML = "Feels like " + feels2.toFixed(0) + "°C";
                 
-                    document.getElementById("sunrise").innerHTML = "Sunrise " + sunRise3;
-                    document.getElementById("sunset").innerHTML = "Sunset " + sunSet3;
+                    document.getElementById("suntimes").src = "/images/01d.svg";
+
+                    document.getElementById("sunriseimg").src = "/images/sunrise.svg";
+                    document.getElementById("sunrise").innerHTML = sunRise3;
+
+                    document.getElementById("sunsetimg").src = "/images/sunset.svg";
+                    document.getElementById("sunset").innerHTML = sunSet3;
                     
                 });
 
