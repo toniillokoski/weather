@@ -35,9 +35,6 @@ body section {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -45,7 +42,7 @@ body section {
 
 body section form {
   width: 80%;
-  height: 20vh;
+  height: auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -55,6 +52,8 @@ body section form {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  margin-top: 2em;
+  margin-bottom: 2em;
 }
 
 body section form .input-container {
@@ -70,6 +69,7 @@ body section form .input-container {
           align-items: center;
   width: 100%;
   height: 100%;
+  padding: 1em;
 }
 
 body section form .input-container input {
@@ -79,7 +79,9 @@ body section form .input-container input {
   border-bottom: 2px solid #ff8819;
   font-size: 1rem;
   margin-bottom: 0.5em;
-  width: 80%;
+  padding: 1rem;
+  width: 100%;
+  height: 100%;
   color: #e6e6e6;
 }
 
@@ -100,61 +102,48 @@ body section form .input-container input::placeholder {
 }
 
 body section form .input-container button {
-  cursor: pointer;
-  font-size: 1rem;
-  letter-spacing: 0.1em;
-  padding: 0.5rem;
-  border-radius: 5px;
   background: #ff8819;
-  color: white;
-  border: 1px solid white;
-  width: 80%;
-  -webkit-transition: background 0.3s ease-in-out;
-  transition: background 0.3s ease-in-out;
+  padding: 1rem;
 }
 
-body section form .input-container button:hover {
-  background: #ff8819;
-}
-
-body section .weather-container {
-  height: 70vh;
+body .weather-container {
+  height: 100%;
   width: 80%;
 }
 
-body section .weather-container #icon {
+body .weather-container #icon {
   border: none;
   width: 150px;
   height: 150px;
 }
 
-body section .weather-container header h2 {
+body .weather-container header h2 {
   font-size: 1.5em;
   padding: 1em 0em 1em 0em;
   letter-spacing: 0.06em;
   text-transform: uppercase;
 }
 
-body section .weather-container p {
+body .weather-container p {
   border: none;
 }
 
-body section .weather-container #wtype {
+body .weather-container #wtype {
   text-transform: uppercase;
 }
 
-body section .weather-container #temp {
+body .weather-container #temp {
   font-size: 25px;
   font-weight: bold;
   letter-spacing: 0.06em;
   margin-bottom: 0.5em;
 }
 
-body section .weather-container #feels {
+body .weather-container #feels {
   margin-bottom: 2em;
 }
 
-body section .weather-container .suntimesdiv {
+body .weather-container .suntimesdiv {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -165,13 +154,12 @@ body section .weather-container .suntimesdiv {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  border: 1px solid yellow;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
 }
 
-body section .weather-container .suntimesdiv div {
+body .weather-container .suntimesdiv div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -179,17 +167,22 @@ body section .weather-container .suntimesdiv div {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  padding: 0.5rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0.1rem;
   height: 100%;
 }
 
-body section .weather-container .suntimesdiv img {
+body .weather-container .suntimesdiv img {
   vertical-align: middle;
-  margin-right: 10px;
 }
 
-body section .weather-container .suntimesdiv p {
+body .weather-container .suntimesdiv p {
   vertical-align: middle;
-  height: 100%;
+  padding: 0.5rem 0rem 0.5rem 0.3rem;
 }
 /*# sourceMappingURL=styles.css.map */
