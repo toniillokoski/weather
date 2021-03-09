@@ -36,6 +36,8 @@ body {
             align-items: center;
             justify-content: center;
             height: 20%;
+            position: absolute;
+            bottom: 0;
 
             .input-container {
                 display: flex;
@@ -55,14 +57,14 @@ body {
                     height: 100%;
                     color: $background;
                     &::placeholder {
-                        color: rgba(255, 255, 255, 0.75);
+                        color: rgba(0, 0, 0, 0.75);
                     }
                 }
 
                 button {
                     background-color: $accentcolor;
                     border: none;
-                    color: white;
+                    color: rgb(0, 0, 0);
                     padding: 0.5rem;
                     width: 100%;
                     text-align: center;
@@ -75,13 +77,15 @@ body {
 
         .weather-container {
             width: 80%;
+            height: 60vh;
             display: flex;
             flex-direction: column;
             align-items: center;
             //border: 2px solid $accentcolor;
             border-radius: 1rem;
             background: transparent;
-            backdrop-filter: blur(200px);
+            backdrop-filter: blur(100px);
+            margin: auto;
 
             header {
                 h3 {
@@ -103,11 +107,16 @@ body {
                 justify-content: center;
                 padding: 0rem 1rem 0rem 1rem;
 
+                    img[src=""] { 
+                        display: none; 
+                    }
+            
                     img {
                         width: 90%;
                         height: 90%;
                         margin: 0 auto;
                         border: none;
+                        outline: none;
                     }
                     #wtype {
                         align-self: flex-start;
