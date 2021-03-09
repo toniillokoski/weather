@@ -27,7 +27,7 @@ body section {
   position: relative;
   height: 100%;
   width: 100%;
-  max-width: 500px;
+  max-width: 600px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -122,10 +122,13 @@ body section .weather-container {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  border: 1px solid red;
+  border-radius: 1rem;
+  background: transparent;
+  -webkit-backdrop-filter: blur(200px);
+          backdrop-filter: blur(200px);
 }
 
-body section .weather-container header h2 {
+body section .weather-container header h3 {
   font-size: 2rem;
   padding: 1rem 0rem 1rem 0rem;
   letter-spacing: 0.06em;
@@ -133,71 +136,52 @@ body section .weather-container header h2 {
 }
 
 body section .weather-container .container {
+  width: 100%;
+  height: 15rem;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: auto auto;
-      grid-template-columns: auto auto;
-  -ms-grid-rows: 1fr;
-      grid-template-rows: 1fr;
-  gap: 0rem 1rem;
-  margin-bottom: 2rem;
-  padding: 2rem 0rem 2rem 0rem;
-}
-
-body section .weather-container .container .icongrid {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  -ms-grid-rows: (1fr)[2];
+      grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 0.5rem;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  padding: 1rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0rem 1rem 0rem 1rem;
 }
 
-body section .weather-container .container .icongrid img {
-  width: 100px;
-  height: 100px;
-  max-width: 100%;
-  height: auto;
-  width: auto\9;
+body section .weather-container .container img {
+  width: 90%;
+  height: 90%;
+  margin: 0 auto;
+  border: none;
 }
 
-body section .weather-container .container .icongrid p {
+body section .weather-container .container #wtype {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
   text-transform: uppercase;
+  font-size: 0.8rem;
+  padding-top: 1rem;
 }
 
-body section .weather-container .container .tempgrid {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  padding: 1rem;
-}
-
-body section .weather-container .container .tempgrid #temp {
+body section .weather-container .container #temp {
   font-size: 3rem;
   font-weight: bold;
+  vertical-align: middle;
 }
 
-body section .weather-container .container .tempgrid #feels {
+body section .weather-container .container #feels {
   text-align: center;
   text-transform: uppercase;
+  font-size: 0.8rem;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  padding-top: 1rem;
 }
 
 body section .weather-container .suntimesdiv {
