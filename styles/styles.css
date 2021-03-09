@@ -133,7 +133,6 @@ body section .weather-container {
 body section .weather-container header h3 {
   font-size: 2rem;
   padding: 2rem 0rem 2rem 0rem;
-  letter-spacing: 0.06em;
   text-transform: uppercase;
   color: black;
   -webkit-box-shadow: 0px 10px 13px -7px #000000, 9px 9px 17px 10px #000000;
@@ -207,7 +206,7 @@ body section .weather-container .suntimesdiv {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
-  width: 80%;
+  width: 100%;
   padding: 1rem 0rem 1rem 0rem;
 }
 
