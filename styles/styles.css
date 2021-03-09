@@ -52,8 +52,7 @@ body section form {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-top: 2em;
-  margin-bottom: 2em;
+  height: 20%;
 }
 
 body section form .input-container {
@@ -68,8 +67,6 @@ body section form .input-container {
       -ms-flex-align: center;
           align-items: center;
   width: 100%;
-  height: 100%;
-  padding: 1em;
 }
 
 body section form .input-container input {
@@ -79,7 +76,7 @@ body section form .input-container input {
   border-bottom: 2px solid #ff8819;
   font-size: 1rem;
   margin-bottom: 0.5em;
-  padding: 1rem;
+  padding: 0.5rem;
   width: 100%;
   height: 100%;
   color: #e6e6e6;
@@ -102,48 +99,108 @@ body section form .input-container input::placeholder {
 }
 
 body section form .input-container button {
-  background: #ff8819;
+  background-color: #ff8819;
+  border: none;
+  color: white;
+  padding: 0.5rem;
+  width: 100%;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 1rem;
+}
+
+body section .weather-container {
+  width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 1px solid red;
+}
+
+body section .weather-container header h2 {
+  font-size: 2rem;
+  padding: 1rem 0rem 1rem 0rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+body section .weather-container .container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto;
+      grid-template-columns: auto auto;
+  -ms-grid-rows: 1fr;
+      grid-template-rows: 1fr;
+  gap: 0rem 1rem;
+  margin-bottom: 2rem;
+  padding: 2rem 0rem 2rem 0rem;
+}
+
+body section .weather-container .container .icongrid {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   padding: 1rem;
 }
 
-body .weather-container {
-  height: 100%;
-  width: 80%;
+body section .weather-container .container .icongrid img {
+  width: 100px;
+  height: 100px;
+  max-width: 100%;
+  height: auto;
+  width: auto\9;
 }
 
-body .weather-container #icon {
-  border: none;
-  width: 150px;
-  height: 150px;
-}
-
-body .weather-container header h2 {
-  font-size: 1.5em;
-  padding: 1em 0em 1em 0em;
-  letter-spacing: 0.06em;
+body section .weather-container .container .icongrid p {
   text-transform: uppercase;
 }
 
-body .weather-container p {
-  border: none;
+body section .weather-container .container .tempgrid {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 1rem;
 }
 
-body .weather-container #wtype {
-  text-transform: uppercase;
-}
-
-body .weather-container #temp {
-  font-size: 25px;
+body section .weather-container .container .tempgrid #temp {
+  font-size: 3rem;
   font-weight: bold;
-  letter-spacing: 0.06em;
-  margin-bottom: 0.5em;
 }
 
-body .weather-container #feels {
-  margin-bottom: 2em;
+body section .weather-container .container .tempgrid #feels {
+  text-align: center;
+  text-transform: uppercase;
 }
 
-body .weather-container .suntimesdiv {
+body section .weather-container .suntimesdiv {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -157,9 +214,11 @@ body .weather-container .suntimesdiv {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
+  width: 80%;
+  padding: 1rem 0rem 1rem 0rem;
 }
 
-body .weather-container .suntimesdiv div {
+body section .weather-container .suntimesdiv div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -174,14 +233,13 @@ body .weather-container .suntimesdiv div {
       -ms-flex-align: center;
           align-items: center;
   padding: 0.1rem;
-  height: 100%;
 }
 
-body .weather-container .suntimesdiv img {
+body section .weather-container .suntimesdiv img {
   vertical-align: middle;
 }
 
-body .weather-container .suntimesdiv p {
+body section .weather-container .suntimesdiv p {
   vertical-align: middle;
   padding: 0.5rem 0rem 0.5rem 0.3rem;
 }

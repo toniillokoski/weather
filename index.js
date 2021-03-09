@@ -43,7 +43,7 @@ const successfulLocation = (position) => {
                     document.getElementById("wtype").innerHTML = wtype;
                 
                     document.getElementById("temp").innerHTML = temp2.toFixed(0) + "°C";
-                    document.getElementById("feels").innerHTML = "Feels like " + feels2.toFixed(0) + "°C";
+                    document.getElementById("feels").innerHTML = "Feels like <br>" + feels2.toFixed(0) + "°C";
                 
                     document.getElementById("suntimes").src = "/images/01d.svg";
 
@@ -110,10 +110,10 @@ function changeCity(x) {
         document.getElementById("wtype").innerHTML = wtype;
 
         document.getElementById("temp").innerHTML = temp2.toFixed(0) + "°C";
-        document.getElementById("feels").innerHTML = "Feels like " + feels2.toFixed(0) + "°C";
+        document.getElementById("feels").innerHTML = "Feels like <br>" + feels2.toFixed(0) + "°C";
 
-        document.getElementById("sunrise").innerHTML = "Sunrise " + sunRise3;
-        document.getElementById("sunset").innerHTML = "Sunset " + sunSet3;
+        document.getElementById("sunrise").innerHTML = sunRise3;
+        document.getElementById("sunset").innerHTML = sunSet3;
         
     });
 

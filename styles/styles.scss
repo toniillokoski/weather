@@ -36,16 +36,13 @@ body {
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-top: 2em;
-            margin-bottom: 2em;
+            height: 20%;
 
             .input-container {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
                 width: 100%;
-                height: 100%;
-                padding: 1em;
 
                 input {
                     border: none;
@@ -54,7 +51,7 @@ body {
                     border-bottom: 2px solid $accentcolor;
                     font-size: 1rem;
                     margin-bottom: 0.5em;
-                    padding: 1rem;
+                    padding: 0.5rem;
                     width: 100%;
                     height: 100%;
                     color: $background;
@@ -62,52 +59,89 @@ body {
                         color: rgba(255, 255, 255, 0.75);
                     }
                 }
+
                 button {
-                    background: $accentcolor;
-                    padding: 1rem;
-                    }
+                    background-color: $accentcolor;
+                    border: none;
+                    color: white;
+                    padding: 0.5rem;
+                    width: 100%;
+                    text-align: center;
+                    text-decoration: none;
+                    display: inline-block;
+                    border-radius: 1rem;
                 }
             }    
         }
 
         .weather-container {
-            height: 100%;
             width: 80%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 1px solid red;
 
-
-            #icon {
-                border: none;
-                width: 150px;
-                height: 150px;
-            }
             header {
                 h2 {
-                    font-size: 1.5em;
-                    padding: 1em 0em 1em 0em;
+                    font-size: 2rem;
+                    padding: 1rem 0rem 1rem 0rem;
                     letter-spacing: 0.06em;
                     text-transform: uppercase;
                 }
             }
-            p {
-                border: none;
+
+            .container {
+                display: grid;
+                grid-template-columns: auto auto;
+                grid-template-rows: 1fr;
+                gap: 0rem 1rem;
+                margin-bottom: 2rem;
+                padding: 2rem 0rem 2rem 0rem;
+
+                .icongrid {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding: 1rem;
+                    img {
+                        width: 100px;
+                        height: 100px;
+                        max-width: 100%;
+                        height: auto;
+                        width: auto\9;
+                    }
+                    p {
+                        text-transform: uppercase;
+                    }
+                }
+
+                .tempgrid {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding: 1rem;
+                    #temp {
+                        font-size: 3rem;
+                        font-weight: bold;
+                    }
+                    #feels {
+                        text-align: center;
+                        text-transform: uppercase;
+
+                    }
+                }
             }
-            #wtype {
-                text-transform: uppercase;
-            }
-            #temp {
-                font-size: 25px;
-                font-weight: bold;
-                letter-spacing: 0.06em;
-                margin-bottom: 0.5em;
-            }
-            #feels {
-                margin-bottom: 2em;
-            }
+
             .suntimesdiv {
                 display: flex;
                 flex-direction: row;
                 align-items: center;
                 justify-content: space-evenly;
+                width: 80%;
+                padding: 1rem 0rem 1rem 0rem;
+
 
                 div {
                     display: flex;
@@ -115,7 +149,6 @@ body {
                     justify-content: center;
                     align-items: center;
                     padding: 0.1rem;
-                    height: 100%;
                 }
 
                 img {
@@ -129,4 +162,4 @@ body {
             }
         }
     }
-
+}
