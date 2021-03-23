@@ -1,6 +1,16 @@
 let key = JSON.stringify(config.apiKey);
 let geokey = JSON.stringify(config1.apiKey);
 
+var currentTime = new Date().getHours();
+if (document.body) {
+    if (8 <= currentTime && currentTime < 20) {
+        document.body.background = "https://res.cloudinary.com/twenty20/private_images/t_standard-fit/v1608570497/photosp/e1aa276a-c1b3-40c8-8599-db055d32024c/e1aa276a-c1b3-40c8-8599-db055d32024c.jpg";
+    }
+    else {
+        document.body.background = "https://res.cloudinary.com/twenty20/private_images/t_standard-fit/v1521838865/photosp/461a2e11-58dd-40b9-a740-889139d7e025/461a2e11-58dd-40b9-a740-889139d7e025.jpg";
+    }
+}
+
 const successfulLocation = (position) => {
     const { latitude, longitude } = position.coords;
     $.getJSON(
@@ -42,8 +52,8 @@ const successfulLocation = (position) => {
 
                     document.getElementById("wtype").innerHTML = wtype;
                 
-                    document.getElementById("temp").innerHTML = temp2.toFixed(0) + "°C";
-                    document.getElementById("feels").innerHTML = "Feels like <br>" + feels2.toFixed(0) + "°C";
+                    document.getElementById("temp").innerHTML = temp2.toFixed(0) + "°c";
+                    document.getElementById("feels").innerHTML = "Feels like <br>" + feels2.toFixed(0) + "°c";
                 
                     document.getElementById("suntimes").src = "/images/01d.svg";
 

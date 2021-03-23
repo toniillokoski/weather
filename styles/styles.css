@@ -4,11 +4,10 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   overflow: hidden;
+  font-family: 'Poppins', sans-serif;
 }
 
 body {
-  background: -webkit-gradient(linear, left bottom, left top, from(#e6e6e6), to(#2274d1));
-  background: linear-gradient(360deg, #e6e6e6 0%, #2274d1 100%);
   text-align: center;
   height: 100vh;
   max-height: 100vh;
@@ -21,13 +20,16 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 body section {
   position: relative;
   height: 100%;
   width: 100%;
-  max-width: 600px;
+  max-width: 450px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -77,23 +79,23 @@ body section form .input-container input {
   padding: 0.5rem;
   width: 100%;
   height: 100%;
-  color: black;
+  color: white;
 }
 
 body section form .input-container input::-webkit-input-placeholder {
-  color: rgba(0, 0, 0, 0.75);
+  color: rgba(255, 255, 255, 0.896);
 }
 
 body section form .input-container input:-ms-input-placeholder {
-  color: rgba(0, 0, 0, 0.75);
+  color: rgba(255, 255, 255, 0.896);
 }
 
 body section form .input-container input::-ms-input-placeholder {
-  color: rgba(0, 0, 0, 0.75);
+  color: rgba(255, 255, 255, 0.896);
 }
 
 body section form .input-container input::placeholder {
-  color: rgba(0, 0, 0, 0.75);
+  color: rgba(255, 255, 255, 0.896);
 }
 
 body section form .input-container button {
@@ -148,7 +150,7 @@ body section .weather-container .container {
       grid-template-columns: repeat(2, 1fr);
   -ms-grid-rows: (1fr)[2];
       grid-template-rows: repeat(2, 1fr);
-  grid-column-gap: 0.5rem;
+  grid-column-gap: 0;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -158,7 +160,7 @@ body section .weather-container .container {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding: 0rem 1rem 0rem 1rem;
+  padding: 0rem 2rem 0rem 2rem;
 }
 
 body section .weather-container .container img {
@@ -178,7 +180,7 @@ body section .weather-container .container #wtype {
 }
 
 body section .weather-container .container #temp {
-  font-size: 3rem;
+  font-size: 4rem;
   font-weight: bold;
   vertical-align: middle;
 }
