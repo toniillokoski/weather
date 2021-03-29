@@ -20,7 +20,7 @@ const successfulLocation = (position) => {
 
             
             $.getJSON(
-                `http://api.openweathermap.org/data/2.5/weather?q=${location1}&units=metric&appid=${key.replace(/\"/g, "")}` , 
+                `https://api.openweathermap.org/data/2.5/weather?q=${location1}&units=metric&appid=${key.replace(/\"/g, "")}` , 
                 function(data){
                     //Weather icon
                     let icon = data.weather[0].icon;
@@ -90,7 +90,7 @@ function changeCity(x) {
     let key = JSON.stringify(config.apiKey);
 
     $.getJSON(
-    `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${key.replace(/\"/g, "")}`
+    `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${key.replace(/\"/g, "")}`
     , 
     function(data){
         //Weather icon
