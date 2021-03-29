@@ -48,19 +48,19 @@ const successfulLocation = (position) => {
                     //TODO : TRY TO DO FUNCTION HERE
                 
                     document.getElementById("city").innerHTML = location1;
-                    document.getElementById("icon").src = `/images/${icon}.svg`;
+                    document.getElementById("icon").src = `/weather-app/images/${icon}.svg`;
 
                     document.getElementById("wtype").innerHTML = wtype;
                 
                     document.getElementById("temp").innerHTML = temp2.toFixed(0) + "°c";
                     document.getElementById("feels").innerHTML = "Feels like <br>" + feels2.toFixed(0) + "°c";
                 
-                    document.getElementById("suntimes").src = "/images/01d.svg";
+                    document.getElementById("suntimes").src = "/weather-app/images/01d.svg";
 
-                    document.getElementById("sunriseimg").src = "/images/sunrise.svg";
+                    document.getElementById("sunriseimg").src = "/weather-app/images/sunrise.svg";
                     document.getElementById("sunrise").innerHTML = sunRise3;
 
-                    document.getElementById("sunsetimg").src = "/images/sunset.svg";
+                    document.getElementById("sunsetimg").src = "/weather-app/images/sunset.svg";
                     document.getElementById("sunset").innerHTML = sunSet3;
                     
                 });
@@ -116,7 +116,7 @@ function changeCity(x) {
 
         document.getElementById("city").innerHTML = city;
 
-        document.getElementById("icon").src = `/images/${icon}.svg`;
+        document.getElementById("icon").src = `/weather-app/images/${icon}.svg`;
         document.getElementById("wtype").innerHTML = wtype;
 
         document.getElementById("temp").innerHTML = temp2.toFixed(0) + "°C";
